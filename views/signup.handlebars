@@ -1,0 +1,64 @@
+
+{{> navbar}}
+
+<style>
+  #spinner {
+    display: none;
+    text-align: center;
+    margin: 0 auto;
+  }
+</style>
+
+<div class="uk-container uk-padding-large uk-width-large">
+  <div>
+    <h2>Sign Up</h2>
+    <label>Your public URL will be: 
+      <div class="uk-alert-success" uk-alert>
+          <p>http://localhost:8080/<b><span id="urlLabel" class="uk-text-success"></span></b></p>
+      </div>
+    </label>
+
+    <div id='spinner'><span uk-spinner='ratio: 4.5'></span></div>
+
+    <form id="loginForm" class="signup uk-form-stacked">
+
+      <div class="uk-margin-small">
+        <label class="uk-form-label">Username
+          <input id="username-input" class="uk-input" type="text" />
+        </label>
+      </div>
+
+      <div class="uk-margin-small">
+        <label class="uk-form-label">Password
+          <input id="password-input" class="uk-input" type="password" />
+        </label>
+      </div>
+
+      <div class="uk-margin-small">
+        <label class="uk-form-label">Confirm Password
+          <input id="confirm-input" class="uk-input" type="password" />
+        </label>
+      </div>
+
+      <div class="uk-margin-small">
+        <label class="uk-form-label">GitHub Username
+          <input id="github-input" class="uk-input" type="text" />
+        </label>
+      </div>
+
+      <div
+        style="display: none;"
+        id="alert"
+        class="uk-alert uk-alert-danger u-margin-small"
+        role="alert">
+        <span uk-icon="icon: warning"></span>
+        <span class="sr-only">Error:</span> <span class="msg"></span>
+      </div>
+      <button class="uk-button uk-button-primary">Submit</button>
+    </form>
+
+    <p>Already have an account? Login <a href="/login">here</a></p>
+  </div>
+</div>
+
+

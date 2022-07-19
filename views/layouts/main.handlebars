@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {{!-- UiKit --}}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/css/uikit.min.css" />
+
+  {{!-- Custom CSS --}}
+  <link rel="stylesheet" href="/css/main.css">
+  {{!-- GOOGLE FONT --}}
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap" rel="stylesheet">
+
+  <style>
+    .profile-image {
+      background: dodgerblue {{#if profileImage}}url({{profileImage}}){{/if}};
+      background-size: 50px auto;
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
+    }
+  </style>
+  <title>OneStop</title>
+</head>
+
+<body>
+  
+  {{{ body }}}
+
+  {{!-- UI Kit JS --}}
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit-icons.min.js"></script>
+
+  {{!-- Jquery JS --}}
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+  integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+
+  {{#if script}}
+    <script src="{{script}}"></script>
+  {{/if}}
+</body>
+
+</html>
