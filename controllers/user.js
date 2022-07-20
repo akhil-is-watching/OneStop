@@ -2,10 +2,17 @@ const db = require("../models");
 const moment = require("moment");
 
 function login(req, res) {
-  res.json({
-    username: req.user.username,
-    id: req.user.id
-  });
+  res
+    .json({
+      username: req.user.username,
+      id: req.user.id
+    })
+    .then(function() {
+      res.redirect(307, "/api/login");
+    })
+    .catch(function(err) {
+      res.status(401).json(err);
+    });
 }
 
 function signup(req, res) {
