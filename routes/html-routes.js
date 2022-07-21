@@ -3,8 +3,6 @@ const express = require("express");
 const buildUserInfo = require("../middleware/getUserInfo");
 const userController = require("../controllers/user");
 const formatRepoNames = require("../middleware/formatRepoNames");
-const adminAuthentication = require("../middleware/adminAuthentication");
-const adminController = require("../controllers/admin");
 
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../middleware/isAuthenticated");
@@ -50,20 +48,6 @@ router.get("/:username", function(req, res) {
     res.render(userData.layout, {
       ...userData,
       layout: "public"
-    });
-  });
-});
-
-router.get("/dashboard/admin", adminAuthentication, function(req, res) {
-  adminController.getDatabaseStats().then(data => {
-    res.render("admin", {
-      stats: {
-        storage: data.storage,
-        users: data.users,
-        repos: data.repos,
-        userData: data.userData
-      },
-      script: "/js/admin.js"
     });
   });
 });
