@@ -30,8 +30,9 @@ function signup(req, res) {
 }
 
 function logout(req, res) {
-  req.logout();
-  res.redirect("/");
+  req.session.destroy(function(err) {
+    res.redirect("/");
+  });
 }
 
 function updateWhereNull(updateData, currentData) {
