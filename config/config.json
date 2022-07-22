@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "ak47warmachine",
-    "database": "portfoliobuilderdb",
-    "host": "127.0.0.1",
+    "username": "uebrw9dmanb0tpst",
+    "password": "ytjz00EVwvtMtjE8xnxp",
+    "database": "bysstxmkaqg0f7y7o0ki",
+    "host": "bysstxmkaqg0f7y7o0ki-mysql.services.clever-cloud.com",
     "dialect": "mysql",
     "logging": false
   },
